@@ -13,7 +13,7 @@
 //  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include <stdint.h>
 #include <TouchScreen.h> 
-#include <TFT.h>
+#include <TFT_TouchShield.h>
 #ifdef SEEEDUINO
   #define YP A2   // must be an analog pin, use "An" notation!
   #define XM A1   // must be an analog pin, use "An" notation!
@@ -52,7 +52,7 @@ void setup(void) {
 
 void loop(void) {
   // a point object holds x y and z coordinates
-  Point p = ts.getPoint();
+  TSPoint p = ts.getPoint();
 
   if (p.z > ts.pressureThreshhold) {
      Serial.print("Raw X = "); Serial.print(p.x);
